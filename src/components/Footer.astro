@@ -1,0 +1,37 @@
+<footer>
+  <span class="footer-brand">Ridgeline Collaborative</span>
+  <span>A 501(c)(4) social welfare organization &middot; &copy; 2026</span>
+</footer>
+
+<style>
+  footer {
+    background: var(--forest);
+    color: var(--sage);
+    padding: 2.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+  }
+  .footer-brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    color: var(--sage-light);
+    font-size: 0.95rem;
+  }
+  footer :global(a) {
+    color: var(--sage);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  footer :global(a:hover) { color: var(--sage-light); }
+
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      gap: 0.75rem;
+      text-align: center;
+    }
+  }
+</style>

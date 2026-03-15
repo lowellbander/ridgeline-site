@@ -1,0 +1,62 @@
+---
+interface Props {
+  heading: string;
+  text: string;
+}
+
+const { heading, text } = Astro.props;
+---
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-heading">{heading}</h2>
+    <p class="cta-text">{text}</p>
+    <a href="mailto:hello@ridgelinecollab.org" class="cta-email">hello@ridgelinecollab.org</a>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: var(--warm-white);
+  }
+  .cta-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .cta-heading {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: var(--forest);
+    margin-bottom: 1rem;
+  }
+  .cta-text {
+    color: var(--text-light);
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .cta-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    color: var(--forest);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sage-light);
+    padding-bottom: 0.2rem;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .cta-email:hover {
+    color: var(--forest-mid);
+    border-color: var(--forest);
+  }
+
+  @media (max-width: 768px) {
+    .cta-section { padding: 3.5rem 1.5rem; }
+  }
+</style>

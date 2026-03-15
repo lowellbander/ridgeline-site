@@ -1,0 +1,253 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import TopoLines from '../../components/TopoLines.astro';
+import HeroBack from '../../components/HeroBack.astro';
+import Badge from '../../components/Badge.astro';
+import CtaSection from '../../components/CtaSection.astro';
+---
+
+<BaseLayout
+  title="PNW Energy Reckoning — Ridgeline Collaborative"
+  description="Three interlocking crises. One regional electricity system. A paper forthcoming from Ridgeline Collaborative."
+  ogImage="https://ridgelinecollab.org/og-reckoning.png"
+  ogUrl="https://ridgelinecollab.org/reckoning"
+  ogType="article"
+  twitterTitle="PNW Energy Reckoning"
+  twitterDescription="Three interlocking crises. One regional electricity system."
+>
+  <Nav variant="subpage" />
+
+  <section class="hero">
+    <TopoLines variant="subpage" />
+
+    <div class="hero-content">
+      <HeroBack />
+      <Badge text="Paper forthcoming 2026" />
+      <h1>PNW Energy Reckoning</h1>
+      <p class="hero-subtitle">Three interlocking crises. One regional electricity system. A paper forthcoming from Ridgeline Collaborative.</p>
+    </div>
+  </section>
+
+  <section class="framing">
+    <div class="framing-inner">
+      <p class="framing-text">
+        The Pacific Northwest electricity system faces a <strong>convergence of crises</strong> — explosive demand growth, aging infrastructure requiring massive reinvestment, and an accelerating clean energy transition — all governed by a fragmented patchwork of institutions that weren't designed for challenges of this scale. <strong>This paper maps the landscape.</strong>
+      </p>
+    </div>
+  </section>
+
+  <section class="outline">
+    <div class="outline-inner">
+      <div class="section-label">Paper outline</div>
+      <h2 class="section-heading">What the paper covers</h2>
+
+      <ol class="outline-list">
+        <li class="outline-item">
+          <span class="outline-number">1</span>
+          <div>
+            <span class="crisis-tag tag-crisis">Crisis</span>
+            <div class="outline-title">The Demand Tsunami</div>
+            <p class="outline-desc">Data centers, electrification, and industrial expansion are driving unprecedented load growth across the region — straining a system built for a different era.</p>
+          </div>
+        </li>
+        <li class="outline-item">
+          <span class="outline-number">2</span>
+          <div>
+            <span class="crisis-tag tag-crisis">Crisis</span>
+            <div class="outline-title">Institutional Fragmentation</div>
+            <p class="outline-desc">Dozens of utilities, agencies, and jurisdictions share responsibility for a deeply interconnected grid — but no one is steering the whole.</p>
+          </div>
+        </li>
+        <li class="outline-item">
+          <span class="outline-number">3</span>
+          <div>
+            <span class="crisis-tag tag-crisis">Crisis</span>
+            <div class="outline-title">The Electrotech Revolution</div>
+            <p class="outline-desc">The clean energy transition is accelerating faster than institutions can adapt, creating both existential risks and transformative opportunities.</p>
+          </div>
+        </li>
+        <li class="outline-item">
+          <span class="outline-number">4</span>
+          <div>
+            <span class="crisis-tag tag-analysis">Analysis</span>
+            <div class="outline-title">What's Already Being Tried</div>
+            <p class="outline-desc">A survey of current efforts — from WRAP and Markets+ to state-level policy — and why they're necessary but insufficient.</p>
+          </div>
+        </li>
+        <li class="outline-item">
+          <span class="outline-number">5</span>
+          <div>
+            <span class="crisis-tag tag-analysis">Analysis</span>
+            <div class="outline-title">What's Missing</div>
+            <p class="outline-desc">The gaps, blind spots, and structural barriers that current approaches don't address.</p>
+          </div>
+        </li>
+        <li class="outline-item">
+          <span class="outline-number">6</span>
+          <div>
+            <span class="crisis-tag tag-action">Action</span>
+            <div class="outline-title">A Landscape of Action</div>
+            <p class="outline-desc">Not a single prescription, but a map of where leverage exists — for policymakers, advocates, and the public.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <CtaSection
+    heading="Stay in the loop"
+    text="This paper is in active development. If you'd like to be notified when it's published, or if you work in PNW energy policy and want to connect, reach out."
+  />
+</BaseLayout>
+
+<style>
+  /* HERO */
+  .hero {
+    position: relative;
+    padding: 10rem 2rem 6rem;
+    background: var(--forest);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 70%, rgba(122, 154, 126, 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 30%, rgba(61, 74, 92, 0.15) 0%, transparent 50%);
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.15;
+    color: var(--warm-white);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s 0.1s ease both;
+  }
+
+  .hero-subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--sage-light);
+    line-height: 1.6;
+    max-width: 600px;
+    animation: fadeInUp 0.6s 0.2s ease both;
+  }
+
+  /* FRAMING */
+  .framing {
+    padding: 5rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .framing-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .framing-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+  .framing-text strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* OUTLINE */
+  .outline {
+    padding: 5rem 2rem;
+    background: var(--cream);
+  }
+  .outline-inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    margin-bottom: 3rem;
+  }
+
+  .outline-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .outline-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .outline-item:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .outline-number {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 2rem;
+    color: var(--sage);
+    line-height: 1;
+  }
+
+  .outline-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--forest);
+    margin-bottom: 0.4rem;
+  }
+
+  .outline-desc {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .crisis-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    margin-bottom: 0.5rem;
+  }
+  .tag-crisis {
+    background: rgba(196, 163, 90, 0.15);
+    color: var(--gold);
+  }
+  .tag-analysis {
+    background: rgba(122, 154, 126, 0.15);
+    color: var(--sage);
+  }
+  .tag-action {
+    background: rgba(61, 74, 92, 0.15);
+    color: var(--slate);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero { padding: 8rem 1.5rem 4rem; }
+    .framing, .outline { padding: 3.5rem 1.5rem; }
+    .outline-item { grid-template-columns: 40px 1fr; gap: 1rem; }
+  }
+</style>

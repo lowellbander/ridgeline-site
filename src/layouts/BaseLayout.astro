@@ -1,0 +1,51 @@
+---
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage: string;
+  ogUrl: string;
+  ogType?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage,
+  ogUrl,
+  ogType = 'website',
+  twitterTitle,
+  twitterDescription,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content={ogType}>
+  <meta property="og:url" content={ogUrl}>
+  <meta property="og:image" content={ogImage}>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={twitterTitle ?? title}>
+  <meta name="twitter:description" content={twitterDescription ?? description}>
+  <meta name="twitter:image" content={ogImage}>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <slot />
+  <Footer />
+</body>
+</html>
