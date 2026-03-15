@@ -360,6 +360,14 @@
     .project-link:not(.primary .project-link) { color: var(--sage); }
     .project-link:hover { gap: 0.65rem; }
 
+    /* Make entire card clickable via stretched link */
+    .project-card { position: relative; }
+    .project-link::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+
     .project-visual {
       display: flex;
       align-items: center;
