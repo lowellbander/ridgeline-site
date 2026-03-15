@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climate & Change Camp 2026 — Ridgeline Collaborative</title>
+  <meta name="description" content="Four days at River Farm. 50–80 people working on climate and societal change. Futures exercises, nature, and real connection. July 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --forest: #1a2e1f;
+      --forest-mid: #2a4a32;
+      --sage: #7a9a7e;
+      --sage-light: #b8ccba;
+      --slate: #3d4a5c;
+      --slate-light: #8895a7;
+      --warm-white: #f5f2ed;
+      --cream: #ece7df;
+      --gold: #c4a35a;
+      --gold-muted: #d4b97a;
+      --text: #2c3338;
+      --text-light: #5a6570;
+      --border: #d5cfc5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text);
+      background: var(--warm-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(26, 46, 31, 0.92);
+      backdrop-filter: blur(12px);
+    }
+    .nav-brand {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--warm-white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      color: var(--sage-light);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--warm-white); }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 10rem 2rem 6rem;
+      background: var(--forest);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(122, 154, 126, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 75% 25%, rgba(196, 163, 90, 0.08) 0%, transparent 50%);
+    }
+
+    .topo-lines {
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      overflow: hidden;
+    }
+    .topo-lines svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--sage);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      transition: color 0.3s, gap 0.3s;
+    }
+    .hero-back:hover { color: var(--sage-light); gap: 0.6rem; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--sage);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage-light);
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.6s ease both;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      color: var(--warm-white);
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.6s 0.1s ease both;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--sage-light);
+    }
+
+    .hero-subtitle {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--sage-light);
+      line-height: 1.6;
+      max-width: 600px;
+      animation: fadeInUp 0.6s 0.2s ease both;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* QUOTE */
+    .quote-section {
+      padding: 5rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .quote-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    blockquote {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      line-height: 1.7;
+      color: var(--forest);
+      border-left: 3px solid var(--sage);
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .quote-body {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text-light);
+      font-weight: 300;
+    }
+    .quote-body strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* DETAILS BAR */
+    .details-bar {
+      background: var(--forest);
+      padding: 2.5rem 2rem;
+    }
+    .details-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .detail-item {
+      text-align: center;
+    }
+    .detail-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.4rem;
+    }
+    .detail-value {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--warm-white);
+    }
+
+    /* SECTIONS */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-heading {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.3;
+      color: var(--forest);
+      margin-bottom: 2rem;
+    }
+
+    /* SHAPE OF THE WEEKEND */
+    .shape {
+      padding: 5rem 2rem;
+      background: var(--cream);
+    }
+    .shape-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .thirds-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .third-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .third-fraction {
+      font-family: 'Fraunces', serif;
+      font-weight: 300;
+      font-size: 2.5rem;
+      color: var(--sage);
+      margin-bottom: 0.5rem;
+    }
+    .third-label {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
+    }
+    .third-desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* TOPICS */
+    .topics {
+      padding: 5rem 2rem;
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+    }
+    .topics-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .topic-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .topic-item {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .topic-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+    .topic-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--forest);
+      margin-bottom: 0.6rem;
+    }
+    .topic-desc {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* PLACE */
+    .place {
+      padding: 5rem 2rem;
+      background: var(--cream);
+    }
+    .place-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .place-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      font-weight: 300;
+    }
+    .place-text strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* LOGISTICS */
+    .logistics {
+      padding: 5rem 2rem;
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+    }
+    .logistics-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .logistics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .logistics-item h3 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--forest);
+      margin-bottom: 0.4rem;
+    }
+    .logistics-item p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* COST */
+    .cost {
+      padding: 5rem 2rem;
+      background: var(--cream);
+    }
+    .cost-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .cost-headline {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: var(--forest);
+      margin-bottom: 1.5rem;
+    }
+    .cost-tiers {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    .cost-tier {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .tier-price {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--forest);
+    }
+    .tier-label {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-weight: 300;
+    }
+    .cost-note {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-weight: 300;
+      line-height: 1.7;
+      margin-top: 1.5rem;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: var(--warm-white);
+    }
+    .cta-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .cta-heading {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: 1.8rem;
+      color: var(--forest);
+      margin-bottom: 1rem;
+    }
+    .cta-text {
+      color: var(--text-light);
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .cta-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem;
+      color: var(--forest);
+      text-decoration: none;
+      border-bottom: 1px solid var(--sage-light);
+      padding-bottom: 0.2rem;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .cta-email:hover {
+      color: var(--forest-mid);
+      border-color: var(--forest);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--forest);
+      color: var(--sage);
+      padding: 2.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+    }
+    .footer-brand {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      color: var(--sage-light);
+      font-size: 0.95rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      .nav-links a { font-size: 0.75rem; }
+      .hero { padding: 8rem 1.5rem 4rem; }
+      .details-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .thirds-grid { grid-template-columns: 1fr; }
+      .logistics-grid { grid-template-columns: 1fr; }
+      .quote-section, .shape, .topics, .place, .logistics, .cost, .cta-section {
+        padding: 3.5rem 1.5rem;
+      }
+      footer {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">Ridgeline</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/#projects">Projects</a>
+    <a href="/#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <path d="M0 450 Q200 420 400 440 Q600 460 800 430 Q1000 400 1200 420" stroke="#7a9a7e" stroke-width="1.5" fill="none"/>
+      <path d="M0 370 Q150 340 350 360 Q550 380 750 350 Q950 320 1200 340" stroke="#7a9a7e" stroke-width="1.5" fill="none"/>
+      <path d="M0 290 Q250 270 450 285 Q600 300 800 275 Q950 255 1200 270" stroke="#7a9a7e" stroke-width="1.5" fill="none"/>
+      <path d="M0 220 Q200 195 400 215 Q550 230 750 205 Q900 185 1200 200" stroke="#7a9a7e" stroke-width="1.5" fill="none"/>
+      <path d="M0 155 Q300 140 500 150 Q700 165 900 145 Q1050 130 1200 140" stroke="#7a9a7e" stroke-width="1.5" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <a href="/" class="hero-back">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ridgeline Collaborative
+    </a>
+    <div class="hero-badge">July 2026</div>
+    <h1>Climate <em>&</em> Change Camp</h1>
+    <p class="hero-subtitle">Four days to step out of the current, make sense of it together, and leave with relationships and energy that last beyond the weekend.</p>
+  </div>
+</section>
+
+<div class="details-bar">
+  <div class="details-inner">
+    <div class="detail-item">
+      <div class="detail-label">When</div>
+      <div class="detail-value">July 2026</div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-label">Where</div>
+      <div class="detail-value">River Farm, WA</div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-label">Duration</div>
+      <div class="detail-value">4 Days</div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-label">People</div>
+      <div class="detail-value">50&ndash;80</div>
+    </div>
+  </div>
+</div>
+
+<section class="quote-section">
+  <div class="quote-inner">
+    <blockquote>"We're living like the world might end and like it might continue. Both are true, and both require us to show up."</blockquote>
+    <p class="quote-body">
+      This is a gathering for people who feel the weight of what's happening and the pull toward doing something meaningful. People deep in organizing who need strategic connections. People building technical solutions who want to understand the political landscape. People working inside institutions who suspect their leverage is larger than their job description. And people whose day jobs aren't climate-specific but who've been <strong>feeling the pull and wondering where their skills plug in</strong>.
+    </p>
+  </div>
+</section>
+
+<section class="shape">
+  <div class="shape-inner">
+    <div class="section-label">The shape of the weekend</div>
+    <h2 class="section-heading">Not a conference. Not a retreat. Something in between.</h2>
+
+    <div class="thirds-grid">
+      <div class="third-card">
+        <div class="third-fraction">&frac13;</div>
+        <div class="third-label">Together</div>
+        <div class="third-desc">Facilitated sessions, futures exercises, whole-group work</div>
+      </div>
+      <div class="third-card">
+        <div class="third-fraction">&frac13;</div>
+        <div class="third-label">Unstructured</div>
+        <div class="third-desc">Rest, go deeper, follow threads, or just be without an agenda</div>
+      </div>
+      <div class="third-card">
+        <div class="third-fraction">&frac13;</div>
+        <div class="third-label">Nature</div>
+        <div class="third-desc">Hiking, swimming, river time, stargazing, being outside as core experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="topics">
+  <div class="topics-inner">
+    <div class="section-label">Conversations</div>
+    <h2 class="section-heading">What we'll dig into</h2>
+
+    <ul class="topic-list">
+      <li class="topic-item">
+        <div class="topic-title">Finding What's Yours to Tend & Grow</div>
+        <p class="topic-desc">What does it mean to find a political home &mdash; not necessarily an organization, but a place where your work plugs into something larger and where you can be replenished when things get hard?</p>
+      </li>
+      <li class="topic-item">
+        <div class="topic-title">Cascadia on Fire (and Flooding, and Shifting)</div>
+        <p class="topic-desc">The gap between what scientists are projecting and what our communities are ready for. What would actual preparation look like: resilience hubs, local networks that function when federal support doesn't?</p>
+      </li>
+      <li class="topic-item">
+        <div class="topic-title">Energy: Electrons, Bills, and Power</div>
+        <p class="topic-desc">Your utility bill is a political battleground. Who pays for the physical impact of climate change and the continuation of the energy transition? What would a system with more distributed power &mdash; both electrical and political &mdash; look like?</p>
+      </li>
+      <li class="topic-item">
+        <div class="topic-title">Stories, Models, and Frameworks</div>
+        <p class="topic-desc">A pop-up library and dedicated space for sharing books, ideas, and stories. Come with your own frameworks for understanding this moment; leave with a bigger, more connected map.</p>
+      </li>
+      <li class="topic-item">
+        <div class="topic-title">Play and Connection</div>
+        <p class="topic-desc">Play in the woods, swim in the river, tell stories around a fire. We'll use play and games as tools for thinking about futures &mdash; trying on what different scenarios feel like rather than just analyzing them.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="place">
+  <div class="place-inner">
+    <div class="section-label">The place</div>
+    <h2 class="section-heading">River Farm</h2>
+    <p class="place-text">
+      <strong>80 acres, 45 minutes east of Bellingham</strong>, part of the Evergreen Land Trust. We'll be on Turtle Island &mdash; a clearing at the center of the property with campsites, fire pit, covered stage, outdoor kitchen, and access to trails, a waterfall, and the South Fork of the Nooksack River.
+    </p>
+    <br>
+    <p class="place-text">
+      Part of what makes this gathering work is that the land does some of the processing for you. The conversations that feel overwhelming in the abstract feel different when you're having them next to a river, or after a morning hike to a waterfall. We weave time in nature into the collective work instead of treating it as a break from the "real work."
+    </p>
+  </div>
+</section>
+
+<section class="logistics">
+  <div class="logistics-inner">
+    <div class="section-label">Logistics</div>
+    <h2 class="section-heading">What to expect</h2>
+
+    <div class="logistics-grid">
+      <div class="logistics-item">
+        <h3>Getting there</h3>
+        <p>Most people leave from Seattle. We'll coordinate carpools and share a logistics guide closer to the event.</p>
+      </div>
+      <div class="logistics-item">
+        <h3>Lodging</h3>
+        <p>Festival-style camping with amenities. Potable water, port-a-potties, parking. Limited yurt/cabin space for health considerations.</p>
+      </div>
+      <div class="logistics-item">
+        <h3>Food</h3>
+        <p>All meals vegetarian with vegan options. A small team leads meal prep; everyone takes at least one shift during the weekend.</p>
+      </div>
+      <div class="logistics-item">
+        <h3>Shared labor</h3>
+        <p>Cooking, dishes, hauling water, keeping shared spaces running. You'll sign up when you arrive. This is part of what makes it work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cost">
+  <div class="cost-inner">
+    <div class="section-label">Cost</div>
+    <h2 class="cost-headline">$50 &ndash; $250 sliding scale</h2>
+
+    <div class="cost-tiers">
+      <div class="cost-tier">
+        <span class="tier-price">$50+</span>
+        <span class="tier-label">Whatever works</span>
+      </div>
+      <div class="cost-tier">
+        <span class="tier-price">$175+</span>
+        <span class="tier-label">Stable finances (suggested)</span>
+      </div>
+      <div class="cost-tier">
+        <span class="tier-price">$250</span>
+        <span class="tier-label">Abundant finances</span>
+      </div>
+    </div>
+
+    <p class="cost-note">$50 deposit at registration holds your spot. We need roughly $175 per person to break even. Pay above if you can, below if you need. If the deposit is a barrier, email us and we'll waive it. No explanation needed.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-heading">Join us</h2>
+    <p class="cta-text">RSVP details coming soon. If you have a partner, friend, or colleague who should be here, send this their way. We'll host smaller gatherings between now and July to meet faces before camp.</p>
+    <a href="mailto:hello@ridgelinecollab.org" class="cta-email">hello@ridgelinecollab.org</a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-brand">Ridgeline Collaborative</span>
+  <span>A 501(c)(4) social welfare organization &middot; &copy; 2026</span>
+</footer>
+
+</body>
+</html>
