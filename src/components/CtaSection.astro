@@ -2,16 +2,22 @@
 interface Props {
   heading: string;
   text: string;
+  linkText?: string;
+  linkUrl?: string;
 }
 
-const { heading, text } = Astro.props;
+const { heading, text, linkText, linkUrl } = Astro.props;
 ---
 
 <section class="cta-section">
   <div class="cta-inner">
     <h2 class="cta-heading">{heading}</h2>
     <p class="cta-text">{text}</p>
-    <a href="mailto:hello@ridgelinecollab.org" class="cta-email">hello@ridgelinecollab.org</a>
+    {linkUrl && linkText ? (
+      <a href={linkUrl} class="cta-link" target="_blank" rel="noopener noreferrer">{linkText}</a>
+    ) : (
+      <a href="mailto:hello@ridgelinecollab.org" class="cta-email">hello@ridgelinecollab.org</a>
+    )}
   </div>
 </section>
 
@@ -54,6 +60,22 @@ const { heading, text } = Astro.props;
   .cta-email:hover {
     color: var(--forest-mid);
     border-color: var(--forest);
+  }
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    color: var(--warm-white);
+    background: var(--forest);
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    border-radius: 2px;
+    transition: background 0.3s;
+  }
+  .cta-link:hover {
+    background: var(--forest-mid);
   }
 
   @media (max-width: 768px) {
